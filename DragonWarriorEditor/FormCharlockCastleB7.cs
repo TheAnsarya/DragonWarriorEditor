@@ -44,7 +44,7 @@ namespace DragonWarriorEditor
          */
         private void loadMap()
         {
-            ClassDWBackend classDWBackend = new ClassDWBackend(path);
+            DataHandler classDWBackend = new DataHandler(path);
 
             string charlockCastleB7DataHexData = classDWBackend.getCharlockCastleB7Data();
 
@@ -149,7 +149,7 @@ namespace DragonWarriorEditor
 
         private void saveMap()
         {
-            ClassDWBackend classDWBackend = new ClassDWBackend(path);
+            DataHandler classDWBackend = new DataHandler(path);
             string newCharlockCastleB7DataHexDataHexData = "";
             for (int x = 1; x <= 900; x++)
             {

@@ -44,7 +44,7 @@ namespace DragonWarriorEditor
          */
         private void loadMap()
         {
-            ClassDWBackend classDWBackend = new ClassDWBackend(path);
+            DataHandler classDWBackend = new DataHandler(path);
 
             string garinhamHexData = classDWBackend.getGarinhamData();
 
@@ -149,7 +149,7 @@ namespace DragonWarriorEditor
 
         private void saveMap()
         {
-            ClassDWBackend classDWBackend = new ClassDWBackend(path);
+            DataHandler classDWBackend = new DataHandler(path);
             string newGarinhamHexData = "";
             for (int x = 1; x <= 400; x++)
             {

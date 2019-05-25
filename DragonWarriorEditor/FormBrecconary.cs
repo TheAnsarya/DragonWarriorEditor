@@ -41,16 +41,14 @@ namespace DragonWarriorEditor {
          * E | Bridge
          * F | Desk
          */
-        private void loadMap()
-        {
-            ClassDWBackend classDWBackend = new ClassDWBackend(path);
-
-            string brecconaryHexData = classDWBackend.getBrecconaryData();
+        private void loadMap() {
+			DataHandler dataHandler = new DataHandler(path);
+			string data = dataHandler.GetMapData(Definition.Map.Brecconary);
 
             int x = 1;
             bool hasError = false;
 
-            foreach (char ch in brecconaryHexData)
+            foreach (char ch in data)
             {
                 try
                 {
@@ -148,7 +146,7 @@ namespace DragonWarriorEditor {
 
         private void saveMap()
         {
-            ClassDWBackend classDWBackend = new ClassDWBackend(path);
+            DataHandler classDWBackend = new DataHandler(path);
             string newBrecconaryHexData = "";
             for (int x = 1; x <= 900; x++)
             {

@@ -43,7 +43,7 @@ namespace DragonWarriorEditor {
          */
         private void loadMap()
         {
-            ClassDWBackend classDWBackend = new ClassDWBackend(path);
+            DataHandler classDWBackend = new DataHandler(path);
 
             string rimuldarHexData = classDWBackend.getRimuldarData();
 
@@ -148,7 +148,7 @@ namespace DragonWarriorEditor {
 
         private void saveMap()
         {
-            ClassDWBackend classDWBackend = new ClassDWBackend(path);
+            DataHandler classDWBackend = new DataHandler(path);
             string newRimuldarHexData = "";
             for (int x = 1; x <= 900; x++)
             {

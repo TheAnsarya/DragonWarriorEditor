@@ -44,7 +44,7 @@ namespace DragonWarriorEditor
          */
         private void loadMap()
         {
-            ClassDWBackend classDWBackend = new ClassDWBackend(path);
+            DataHandler classDWBackend = new DataHandler(path);
 
             string rainShrineHexData = classDWBackend.getRainShrineData();
 
@@ -149,7 +149,7 @@ namespace DragonWarriorEditor
 
         private void saveMap()
         {
-            ClassDWBackend classDWBackend = new ClassDWBackend(path);
+            DataHandler classDWBackend = new DataHandler(path);
             string rainShrineHexData = "";
             for (int x = 1; x <= 100; x++)
             {

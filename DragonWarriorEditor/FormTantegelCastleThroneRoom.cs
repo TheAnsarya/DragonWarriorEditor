@@ -40,9 +40,8 @@ namespace DragonWarriorEditor {
          * F | Desk
          */
 		private void loadMap() {
-			ClassDWBackend classDWBackend = new ClassDWBackend(path);
-
-			string tantegelCastleThroneRoomHexData = classDWBackend.GetMapData(Map.TantegelCastleThroneRoom);
+			DataHandler dataHandler = new DataHandler(path);
+			string tantegelCastleThroneRoomHexData = dataHandler.GetMapData(Map.TantegelCastleThroneRoom);
 
 			int x = 1;
 			bool hasError = false;
@@ -138,7 +137,7 @@ namespace DragonWarriorEditor {
 		}
 
 		private void saveMap() {
-			ClassDWBackend classDWBackend = new ClassDWBackend(path);
+			DataHandler classDWBackend = new DataHandler(path);
 			string newTantegelCastleThroneRoomHexData = "";
 			for (int x = 1; x <= 100; x++) {
 				try {

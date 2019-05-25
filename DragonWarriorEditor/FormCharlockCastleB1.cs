@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-// Shawn M. Crawford - [sleepy9090] - 2017
 namespace DragonWarriorEditor {
     public partial class FormCharlockCastleB1 : Form
     {
@@ -41,15 +40,14 @@ namespace DragonWarriorEditor {
          * E | Princess Gwaelin - Special
          * F | Black wall ?????? - Special
          */
-        private void loadMap()
-        {
-            ClassDWBackend classDWBackend = new ClassDWBackend(path);
+        private void loadMap() {
+			DataHandler dataHandler = new DataHandler(path);
+			string data = dataHandler.GetMapData(Definition.Map.CharlockCastleB1);
 
-            string charlockCastleB1HexData = classDWBackend.getCharlockCastleB1Data();
             int x = 1;
             bool hasError = false;
 
-            foreach (char ch in charlockCastleB1HexData)
+            foreach (char ch in data)
             {
                 try
                 {
@@ -150,7 +148,7 @@ namespace DragonWarriorEditor {
 
         private void saveMap()
         {
-            ClassDWBackend classDWBackend = new ClassDWBackend(path);
+            DataHandler classDWBackend = new DataHandler(path);
             string newCharlockCastleB1HexData = "";
             for (int x = 1; x <= 400; x++)
             {

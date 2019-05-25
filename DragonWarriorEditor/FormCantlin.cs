@@ -43,14 +43,13 @@ namespace DragonWarriorEditor {
          */
         private void loadMap()
         {
-            ClassDWBackend classDWBackend = new ClassDWBackend(path);
+			DataHandler dataHandler = new DataHandler(path);
+			string data = dataHandler.GetMapData(Definition.Map.Cantlin);
 
-            string cantlinHexData = classDWBackend.getCantlinData();
-
-            int x = 1;
+			int x = 1;
             bool hasError = false;
 
-            foreach (char ch in cantlinHexData)
+            foreach (char ch in data)
             {
                 try
                 {
@@ -148,7 +147,7 @@ namespace DragonWarriorEditor {
 
         private void saveMap()
         {
-            ClassDWBackend classDWBackend = new ClassDWBackend(path);
+            DataHandler classDWBackend = new DataHandler(path);
             string newCantlinHexData = "";
             for (int x = 1; x <= 900; x++)
             {

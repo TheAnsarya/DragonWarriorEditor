@@ -36,7 +36,7 @@ namespace DragonWarriorEditor
          */
         private void loadMap()
         {
-            ClassDWBackend classDWBackend = new ClassDWBackend(path);
+            DataHandler classDWBackend = new DataHandler(path);
 
             string erdricksCaveB2HexData = classDWBackend.getErdricksCaveB2Data();
             int x = 1;
@@ -143,7 +143,7 @@ namespace DragonWarriorEditor
 
         private void saveMap()
         {
-            ClassDWBackend classDWBackend = new ClassDWBackend(path);
+            DataHandler classDWBackend = new DataHandler(path);
             string newErdricksCaveB2HexData = "";
             for (int x = 1; x <= 100; x++)
             {
