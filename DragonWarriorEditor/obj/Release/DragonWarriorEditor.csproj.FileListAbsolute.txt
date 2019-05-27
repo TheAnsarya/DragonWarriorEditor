@@ -39,7 +39,6 @@ C:\Users\Andy\Source\Repos\DragonWarriorEditor\DragonWarriorTownAndDungeonEditor
 C:\Users\Andy\source\repos\DragonWarriorEditor\DragonWarriorEditor\bin\Release\DragonWarriorEditor.exe.config
 C:\Users\Andy\source\repos\DragonWarriorEditor\DragonWarriorEditor\bin\Release\DragonWarriorEditor.exe
 C:\Users\Andy\source\repos\DragonWarriorEditor\DragonWarriorEditor\bin\Release\DragonWarriorEditor.pdb
-C:\Users\Andy\source\repos\DragonWarriorEditor\DragonWarriorEditor\obj\Release\DragonWarriorEditor.csprojAssemblyReference.cache
 C:\Users\Andy\source\repos\DragonWarriorEditor\DragonWarriorEditor\obj\Release\DragonWarriorEditor.AboutBox1.resources
 C:\Users\Andy\source\repos\DragonWarriorEditor\DragonWarriorEditor\obj\Release\DragonWarriorEditor.FormMain.resources
 C:\Users\Andy\source\repos\DragonWarriorEditor\DragonWarriorEditor\obj\Release\DragonWarriorEditor.FormBrecconary.resources

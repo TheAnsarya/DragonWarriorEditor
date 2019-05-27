@@ -41,12 +41,12 @@ namespace DragonWarriorEditor {
          */
 		private void loadMap() {
 			DataHandler dataHandler = new DataHandler(path);
-			string tantegelCastleThroneRoomHexData = dataHandler.GetMapData(Map.TantegelCastleThroneRoom);
+			string data = dataHandler.GetMapData(Map.TantegelCastleThroneRoom);
 
 			int x = 1;
 			bool hasError = false;
 
-			foreach (char ch in tantegelCastleThroneRoomHexData) {
+			foreach (char ch in data) {
 				try {
 					PictureBox currentPictureBox = (PictureBox)FormTantegelCastleThroneRoom.ActiveForm.Controls.Find("pictureBox" + x, true)[0];
 

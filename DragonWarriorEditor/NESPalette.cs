@@ -61,7 +61,7 @@ namespace DragonWarriorEditor {
 				this._RawData = value;
 				this._Colors = null;
 				this._RawColorsInt = null;
-				this._RawColors = null;
+				//this._RawColors = null;
 			}
 		}
 
