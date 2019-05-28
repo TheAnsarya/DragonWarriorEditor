@@ -14,10 +14,10 @@ namespace DragonWarriorEditor {
 		private DataHandler _DataHandler;
 		private DataHandler DataHandler {
 			get {
-				if (_DataHandler == null) {
-					_DataHandler = new DataHandler(Path);
+				if (this._DataHandler == null) {
+					this._DataHandler = new DataHandler(this.Path);
 				}
-				return _DataHandler;
+				return this._DataHandler;
 			}
 		}
 
@@ -27,7 +27,7 @@ namespace DragonWarriorEditor {
 
 		private Definition.MapInfo MapInfo {
 			get {
-				return Definition.Maps[CurrentMap];
+				return Definition.Maps[this.CurrentMap];
 			}
 		}
 
@@ -118,17 +118,17 @@ namespace DragonWarriorEditor {
 		};
 
 		public MapForm(string gamePath, Definition.Map currentMap) {
-			Path = gamePath;
-			CurrentMap = currentMap;
-			InitializeComponent();
-			PopulateComboBoxTileTypes();
-			SetupLayout();
-			SetupTilePalette();
+			this.Path = gamePath;
+			this.CurrentMap = currentMap;
+			this.InitializeComponent();
+			this.PopulateComboBoxTileTypes();
+			this.SetupLayout();
+			this.SetupTilePalette();
 		}
 
 		private void loadMap() {
-			string data = DataHandler.GetMapData(CurrentMap);
-			Dictionary<byte, Image> tileset = TileImages[MapInfo.TileSet];
+			string data = this.DataHandler.GetMapData(this.CurrentMap);
+			Dictionary<byte, Image> tileset = TileImages[this.MapInfo.TileSet];
 
 			int x = 1;
 			bool hasError = false;
@@ -136,7 +136,7 @@ namespace DragonWarriorEditor {
 			foreach (char ch in data) {
 				try {
 					byte index = Convert.ToByte(ch.ToString(), 16);
-					PictureBox box = Boxes[x];
+					PictureBox box = this.Boxes[x];
 
 					box.Image = tileset[index];
 					box.Image.Tag = index;
@@ -159,12 +159,12 @@ namespace DragonWarriorEditor {
 
 		private void SaveMap() {
 			string data = "";
-			for (int x = 1; x <= MapInfo.Dimension.Width * MapInfo.Dimension.Height; x++) {
-				PictureBox box = Boxes[x];
+			for (int x = 1; x <= this.MapInfo.Dimension.Width * this.MapInfo.Dimension.Height; x++) {
+				PictureBox box = this.Boxes[x];
 				data += ((byte)box.Image.Tag).ToString("X");
 			}
 
-			bool result = DataHandler.SetMapData(CurrentMap, data);
+			bool result = this.DataHandler.SetMapData(this.CurrentMap, data);
 			if (result) {
 				MessageBox.Show("Successfully wrote ROM.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			} else {
@@ -173,21 +173,21 @@ namespace DragonWarriorEditor {
 		}
 
 		private void PopulateComboBoxTileTypes() {
-			comboBoxTileTypes.DataSource = new BindingSource(TileNames[MapInfo.TileSet], null);
-			comboBoxTileTypes.DisplayMember = "Value";
-			comboBoxTileTypes.ValueMember = "Key";
+			this.comboBoxTileTypes.DataSource = new BindingSource(TileNames[this.MapInfo.TileSet], null);
+			this.comboBoxTileTypes.DisplayMember = "Value";
+			this.comboBoxTileTypes.ValueMember = "Key";
 		}
 
 		private void LoadMap(object sender, EventArgs e) {
-			loadMap();
+			this.loadMap();
 		}
 
 		private void SetTile(object sender, EventArgs e) {
 			if (sender is PictureBox) {
-				byte index = (byte)comboBoxTileTypes.SelectedValue;
+				byte index = (byte)this.comboBoxTileTypes.SelectedValue;
 				PictureBox box = ((PictureBox)sender);
 
-				box.Image = TileImages[MapInfo.TileSet][index];
+				box.Image = TileImages[this.MapInfo.TileSet][index];
 				box.Image.Tag = index;
 				box.Refresh();
 				box.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -196,28 +196,28 @@ namespace DragonWarriorEditor {
 		}
 
 		private void SetupLayout() {
-			Boxes = new List<PictureBox>();
+			this.Boxes = new List<PictureBox>();
 			Size size = new Size(24, 24);
-			MapArea.Controls.Clear();
+			this.MapArea.Controls.Clear();
 
-			for (int y = 0; y < MapInfo.Dimension.Height; y++) {
-				for (int x = 0; x < MapInfo.Dimension.Width; x++) {
+			for (int y = 0; y < this.MapInfo.Dimension.Height; y++) {
+				for (int x = 0; x < this.MapInfo.Dimension.Width; x++) {
 					PictureBox box = new PictureBox() {
 						Location = new Point(6 + (x * 30), 19 + (y * 30)),
 						Size = size
 					};
 					box.Click += new EventHandler(this.SetTile);
 
-					Boxes.Add(box);
-					MapArea.Controls.Add(box);
+					this.Boxes.Add(box);
+					this.MapArea.Controls.Add(box);
 				}
 			}
 		}
 
 		private void SetupTilePalette() {
-			Dictionary<byte, Image> tileset = TileImages[MapInfo.TileSet];
+			Dictionary<byte, Image> tileset = TileImages[this.MapInfo.TileSet];
 			Size size = new Size(32, 32);
-			TilePaletteArea.Controls.Clear();
+			this.TilePaletteArea.Controls.Clear();
 
 			for (byte i = 0; i < tileset.Count; i++) {
 				PictureBox box = new PictureBox() {
@@ -228,17 +228,17 @@ namespace DragonWarriorEditor {
 				};
 				box.Click += new EventHandler(this.TilePaletteButton_Click);
 
-				TilePaletteArea.Controls.Add(box);
+				this.TilePaletteArea.Controls.Add(box);
 			}
 		}
 
 		private void TilePaletteButton_Click(object sender, EventArgs e) {
 			PictureBox box = ((PictureBox)sender);
-			comboBoxTileTypes.SelectedIndex = (byte)box.Tag;
+			this.comboBoxTileTypes.SelectedIndex = (byte)box.Tag;
 		}
 
 		private void buttonWriteROM_Click(object sender, EventArgs e) {
-			SaveMap();
+			this.SaveMap();
 		}
 	}
 }

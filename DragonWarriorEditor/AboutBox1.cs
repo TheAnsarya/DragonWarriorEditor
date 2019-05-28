@@ -11,13 +11,13 @@ namespace DragonWarriorEditor {
     {
         public AboutBox1()
         {
-            InitializeComponent();
-            this.Text = String.Format("About {0}", AssemblyTitle);
-            this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
-            this.labelCopyright.Text = AssemblyCopyright;
-            this.labelCompanyName.Text = AssemblyCompany;
-            this.textBoxDescription.Text = AssemblyDescription;
+			this.InitializeComponent();
+            this.Text = String.Format("About {0}", this.AssemblyTitle);
+            this.labelProductName.Text = this.AssemblyProduct;
+            this.labelVersion.Text = String.Format("Version {0}", this.AssemblyVersion);
+            this.labelCopyright.Text = this.AssemblyCopyright;
+            this.labelCompanyName.Text = this.AssemblyCompany;
+            this.textBoxDescription.Text = this.AssemblyDescription;
         }
 
         #region Assembly Attribute Accessors

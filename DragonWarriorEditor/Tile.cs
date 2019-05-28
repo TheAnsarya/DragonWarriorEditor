@@ -37,11 +37,11 @@ namespace DragonWarriorEditor {
 
 		// TODO: Currently assuming rawdata = indexes
 		public byte[] ToRawImage(IPalette palette) {
-			byte[] data = new byte[4 * RawData.Length];
+			byte[] data = new byte[4 * this.RawData.Length];
 
-			for (int i = 0; i < RawData.Length; i++) {
+			for (int i = 0; i < this.RawData.Length; i++) {
 				int offset = i * 4;
-				Color color = palette.Colors[RawData[i]];
+				Color color = palette.Colors[this.RawData[i]];
 				data[offset] = color.A;
 				data[offset + 1] = color.R;
 				data[offset + 2] = color.G;

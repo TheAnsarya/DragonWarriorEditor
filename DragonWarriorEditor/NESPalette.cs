@@ -88,7 +88,7 @@ namespace DragonWarriorEditor {
 				if (this._RawColorsInt == null) {
 					this._RawColorsInt = new int[this.Size];
 					for (int i = 0; i < this.Size; i++) {
-						_RawColorsInt[i] = this.Colors[i].ToArgb();
+						this._RawColorsInt[i] = this.Colors[i].ToArgb();
 					};
 				}
 
@@ -103,7 +103,7 @@ namespace DragonWarriorEditor {
 				if (this._RawColorsByte == null) {
 					this._RawColorsByte = new byte[4 * this.Size];
 					for (int i = 0; i < this.Size; i++) {
-						int offset = RawData[i] * 4;
+						int offset = this.RawData[i] * 4;
 						int index = i * 4;
 						this._RawColorsByte[index] = FullPaletteData[offset];
 						this._RawColorsByte[index + 1] = FullPaletteData[offset + 1];
@@ -158,7 +158,7 @@ namespace DragonWarriorEditor {
 		}
 
 		public bool ColorAllowed(int color) {
-			return ColorAllowed(Color.FromArgb(color));
+			return this.ColorAllowed(Color.FromArgb(color));
 		}
 
 		public bool ColorAllowed(byte[] color) {
@@ -166,7 +166,7 @@ namespace DragonWarriorEditor {
 				throw new ArgumentException("color should be byte[4]");
 			}
 
-			return ColorAllowed(Color.FromArgb(color[0], color[1], color[2], color[3]));
+			return this.ColorAllowed(Color.FromArgb(color[0], color[1], color[2], color[3]));
 		}
 	}
 }

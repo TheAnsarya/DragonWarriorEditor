@@ -10,129 +10,129 @@ namespace DragonWarriorEditor {
 		string path;
 
 		public DataHandler(string gamePath) {
-			path = gamePath;
+			this.path = gamePath;
 		}
 
 		public string GetMapData(Map map) {
 			MapInfo info = Definition.Maps[map];
-			return getHexStringFromFile(info.Address, info.DataLength);
+			return this.getHexStringFromFile(info.Address, info.DataLength);
 		}
 
 		public bool SetMapData(Map map, string data) {
 			MapInfo info = Definition.Maps[map];
-			return writeByteArrayToFile(this.path, info.Address, StringToByteArray(data));
+			return this.writeByteArrayToFile(this.path, info.Address, StringToByteArray(data));
 		}
 
 		public bool setTantegelCastleThroneRoomData(string roomData) {
-			return writeByteArrayToFile(this.path, 0x412, StringToByteArray(roomData));
+			return this.writeByteArrayToFile(this.path, 0x412, StringToByteArray(roomData));
 		}
 
 		public bool setTantegelCastleBasementSunlightShrineData(string roomData) {
-			return writeByteArrayToFile(this.path, 0xD35, StringToByteArray(roomData));
+			return this.writeByteArrayToFile(this.path, 0xD35, StringToByteArray(roomData));
 		}
 
 		public bool setTantegelCastleData(string roomData) {
-			return writeByteArrayToFile(this.path, 0x250, StringToByteArray(roomData));
+			return this.writeByteArrayToFile(this.path, 0x250, StringToByteArray(roomData));
 		}
 
 		public bool setRimuldarData(string roomData) {
-			return writeByteArrayToFile(this.path, 0xB72, StringToByteArray(roomData));
+			return this.writeByteArrayToFile(this.path, 0xB72, StringToByteArray(roomData));
 		}
 
 		public bool setCantlinData(string roomData) {
-			return writeByteArrayToFile(this.path, 0x8E8, StringToByteArray(roomData));
+			return this.writeByteArrayToFile(this.path, 0x8E8, StringToByteArray(roomData));
 		}
 
 		public bool setBrecconaryData(string roomData) {
-			return writeByteArrayToFile(this.path, 0x726, StringToByteArray(roomData));
+			return this.writeByteArrayToFile(this.path, 0x726, StringToByteArray(roomData));
 		}
 
 		public bool setKolData(string roomData) {
-			return writeByteArrayToFile(this.path, 0x606, StringToByteArray(roomData));
+			return this.writeByteArrayToFile(this.path, 0x606, StringToByteArray(roomData));
 		}
 
 		public bool setSwampCaveData(string roomData) {
-			return writeByteArrayToFile(this.path, 0xF8C, StringToByteArray(roomData));
+			return this.writeByteArrayToFile(this.path, 0xF8C, StringToByteArray(roomData));
 		}
 
 		public bool setRainShrineData(string roomData) {
-			return writeByteArrayToFile(this.path, 0xD66, StringToByteArray(roomData));
+			return this.writeByteArrayToFile(this.path, 0xD66, StringToByteArray(roomData));
 		}
 
 		public bool setRainbowShrineData(string roomData) {
-			return writeByteArrayToFile(this.path, 0xD98, StringToByteArray(roomData));
+			return this.writeByteArrayToFile(this.path, 0xD98, StringToByteArray(roomData));
 		}
 
 		public bool setErdricksCaveB1Data(string roomData) {
-			return writeByteArrayToFile(this.path, 0x12C0, StringToByteArray(roomData));
+			return this.writeByteArrayToFile(this.path, 0x12C0, StringToByteArray(roomData));
 		}
 
 		public bool setErdricksCaveB2Data(string roomData) {
-			return writeByteArrayToFile(this.path, 0x12F2, StringToByteArray(roomData));
+			return this.writeByteArrayToFile(this.path, 0x12F2, StringToByteArray(roomData));
 		}
 
 		public bool setGarinhamsGraveB1Data(string roomData) {
-			return writeByteArrayToFile(this.path, 0x10AA, StringToByteArray(roomData));
+			return this.writeByteArrayToFile(this.path, 0x10AA, StringToByteArray(roomData));
 		}
 
 		public bool setGarinhamsGraveB2Data(string roomData) {
-			return writeByteArrayToFile(this.path, 0x126C, StringToByteArray(roomData));
+			return this.writeByteArrayToFile(this.path, 0x126C, StringToByteArray(roomData));
 		}
 
 		public bool setGarinhamsGraveB3Data(string roomData) {
-			return writeByteArrayToFile(this.path, 0x1172, StringToByteArray(roomData));
+			return this.writeByteArrayToFile(this.path, 0x1172, StringToByteArray(roomData));
 		}
 
 		public bool setGarinhamsGraveB4Data(string roomData) {
-			return writeByteArrayToFile(this.path, 0x123A, StringToByteArray(roomData));
+			return this.writeByteArrayToFile(this.path, 0x123A, StringToByteArray(roomData));
 		}
 
 		public bool setGarinhamData(string roomData) {
-			return writeByteArrayToFile(this.path, 0xAAA, StringToByteArray(roomData));
+			return this.writeByteArrayToFile(this.path, 0xAAA, StringToByteArray(roomData));
 		}
 
 		public bool setCharlockCastleB1Data(string roomData) {
-			return writeByteArrayToFile(this.path, 0xDCA, StringToByteArray(roomData));
+			return this.writeByteArrayToFile(this.path, 0xDCA, StringToByteArray(roomData));
 		}
 
 		public bool setCharlockCastleB2Data(string roomData) {
-			return writeByteArrayToFile(this.path, 0xE92, StringToByteArray(roomData));
+			return this.writeByteArrayToFile(this.path, 0xE92, StringToByteArray(roomData));
 		}
 
 		public bool setCharlockCastleB3Data(string roomData) {
-			return writeByteArrayToFile(this.path, 0xEC4, StringToByteArray(roomData));
+			return this.writeByteArrayToFile(this.path, 0xEC4, StringToByteArray(roomData));
 		}
 
 		public bool setCharlockCastleB4Data(string roomData) {
-			return writeByteArrayToFile(this.path, 0xEF6, StringToByteArray(roomData));
+			return this.writeByteArrayToFile(this.path, 0xEF6, StringToByteArray(roomData));
 		}
 
 		public bool setCharlockCastleB5Data(string roomData) {
-			return writeByteArrayToFile(this.path, 0xF28, StringToByteArray(roomData));
+			return this.writeByteArrayToFile(this.path, 0xF28, StringToByteArray(roomData));
 		}
 
 		public bool setCharlockCastleB6Data(string roomData) {
-			return writeByteArrayToFile(this.path, 0xF5A, StringToByteArray(roomData));
+			return this.writeByteArrayToFile(this.path, 0xF5A, StringToByteArray(roomData));
 		}
 
 		public bool setCharlockCastleB7Data(string roomData) {
-			return writeByteArrayToFile(this.path, 0x444, StringToByteArray(roomData));
+			return this.writeByteArrayToFile(this.path, 0x444, StringToByteArray(roomData));
 		}
 
 		public bool setCharlockCastleF1Data(string roomData) {
-			return writeByteArrayToFile(this.path, 0xC0, StringToByteArray(roomData));
+			return this.writeByteArrayToFile(this.path, 0xC0, StringToByteArray(roomData));
 		}
 
 		public bool setHauksnessData(string roomData) {
-			return writeByteArrayToFile(this.path, 0x188, StringToByteArray(roomData));
+			return this.writeByteArrayToFile(this.path, 0x188, StringToByteArray(roomData));
 		}
 
 		public bool setRockMountainB1Data(string roomData) {
-			return writeByteArrayToFile(this.path, 0xFE6, StringToByteArray(roomData));
+			return this.writeByteArrayToFile(this.path, 0xFE6, StringToByteArray(roomData));
 		}
 
 		public bool setRockMountainB2Data(string roomData) {
-			return writeByteArrayToFile(this.path, 0x1048, StringToByteArray(roomData));
+			return this.writeByteArrayToFile(this.path, 0x1048, StringToByteArray(roomData));
 		}
 
 		#region common methods
@@ -170,7 +170,7 @@ namespace DragonWarriorEditor {
 
 		private string getHexStringFromFile(long startPoint, int length) {
 			StringBuilder hexString = new StringBuilder();
-			using (FileStream fileStream = new FileStream(@path, FileMode.Open, FileAccess.Read)) {
+			using (FileStream fileStream = new FileStream(this.@path, FileMode.Open, FileAccess.Read)) {
 				long offset = fileStream.Seek(startPoint, SeekOrigin.Begin);
 
 				for (int x = 0; x < length; x++) {
