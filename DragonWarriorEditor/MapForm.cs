@@ -120,6 +120,7 @@ namespace DragonWarriorEditor {
 		public MapForm(string gamePath, Definition.Map currentMap) {
 			this.Path = gamePath;
 			this.CurrentMap = currentMap;
+			this.Text = Definition.MapNames[currentMap];
 			this.InitializeComponent();
 			this.PopulateComboBoxTileTypes();
 			this.SetupLayout();
@@ -130,7 +131,7 @@ namespace DragonWarriorEditor {
 			string data = this.DataHandler.GetMapData(this.CurrentMap);
 			Dictionary<byte, Image> tileset = TileImages[this.MapInfo.TileSet];
 
-			int x = 1;
+			int x = 0;
 			bool hasError = false;
 
 			foreach (char ch in data) {
@@ -159,7 +160,7 @@ namespace DragonWarriorEditor {
 
 		private void SaveMap() {
 			string data = "";
-			for (int x = 1; x <= this.MapInfo.Dimension.Width * this.MapInfo.Dimension.Height; x++) {
+			for (int x = 1; x <= this.MapInfo.Size.Width * this.MapInfo.Size.Height; x++) {
 				PictureBox box = this.Boxes[x];
 				data += ((byte)box.Image.Tag).ToString("X");
 			}
@@ -200,8 +201,8 @@ namespace DragonWarriorEditor {
 			Size size = new Size(24, 24);
 			this.MapArea.Controls.Clear();
 
-			for (int y = 0; y < this.MapInfo.Dimension.Height; y++) {
-				for (int x = 0; x < this.MapInfo.Dimension.Width; x++) {
+			for (int y = 0; y < this.MapInfo.Size.Height; y++) {
+				for (int x = 0; x < this.MapInfo.Size.Width; x++) {
 					PictureBox box = new PictureBox() {
 						Location = new Point(6 + (x * 30), 19 + (y * 30)),
 						Size = size
@@ -220,10 +221,12 @@ namespace DragonWarriorEditor {
 			this.TilePaletteArea.Controls.Clear();
 
 			for (byte i = 0; i < tileset.Count; i++) {
-				PictureBox box = new PictureBox() {
+				Button box = new Button() {
 					Location = new Point(6, 10 + (i * 38)),
 					Size = size,
-					Image = tileset[i],
+					BackgroundImage = tileset[i],
+					BackgroundImageLayout = ImageLayout.Stretch,
+					UseVisualStyleBackColor = true,
 					Tag = i
 				};
 				box.Click += new EventHandler(this.TilePaletteButton_Click);
@@ -233,7 +236,7 @@ namespace DragonWarriorEditor {
 		}
 
 		private void TilePaletteButton_Click(object sender, EventArgs e) {
-			PictureBox box = ((PictureBox)sender);
+			Button box = ((Button)sender);
 			this.comboBoxTileTypes.SelectedIndex = (byte)box.Tag;
 		}
 

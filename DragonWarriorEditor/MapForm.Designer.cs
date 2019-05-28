@@ -92,11 +92,9 @@
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
 			this.Name = "MapForm";
-			this.Text = "Brecconary";
 			this.Shown += new System.EventHandler(this.LoadMap);
 			this.groupBox1.ResumeLayout(false);
 			this.ResumeLayout(false);
-
         }
 
         #endregion
