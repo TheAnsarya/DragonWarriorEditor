@@ -74,3 +74,5 @@ C:\Users\Andy\source\repos\DragonWarriorEditor\DragonWarriorEditor\obj\Release\D
 C:\Users\Andy\source\repos\DragonWarriorEditor\DragonWarriorEditor\obj\Release\DragonWarriorEditor.csproj.CoreCompileInputs.cache
 C:\Users\Andy\source\repos\DragonWarriorEditor\DragonWarriorEditor\obj\Release\DragonWarriorEditor.exe
 C:\Users\Andy\source\repos\DragonWarriorEditor\DragonWarriorEditor\obj\Release\DragonWarriorEditor.pdb
+C:\Users\Andy\source\repos\DragonWarriorEditor\DragonWarriorEditor\obj\Release\DragonWarriorEditor.csprojAssemblyReference.cache
+C:\Users\Andy\source\repos\DragonWarriorEditor\DragonWarriorEditor\obj\Release\DragonWarriorEditor.MapForm.resources

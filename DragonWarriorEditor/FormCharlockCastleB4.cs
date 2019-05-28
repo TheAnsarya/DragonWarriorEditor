@@ -186,24 +186,24 @@ namespace DragonWarriorEditor {
 		}
 
 		private void populateComboBoxTileTypes() {
-			Dictionary<string, string> tileTypes = new Dictionary<string, string>();
-
-			tileTypes.Add("0", "Solid Stone");
-			tileTypes.Add("1", "Stairs Up");
-			tileTypes.Add("2", "Red Brick Floor");
-			tileTypes.Add("3", "Stairs Down");
-			tileTypes.Add("4", "Treasure Chest");
-			tileTypes.Add("5", "Locked Door");
-			tileTypes.Add("6", "Princess Gwaelin");
-			tileTypes.Add("7", "Black Wall");
-			tileTypes.Add("8", "Solid Stone - Special");
-			tileTypes.Add("9", "Stairs Up - Special");
-			tileTypes.Add("A", "Red Brick Floor - Special");
-			tileTypes.Add("B", "Stairs Down - Special");
-			tileTypes.Add("C", "Treasure Chest - Special");
-			tileTypes.Add("D", "Locked Door - Special");
-			tileTypes.Add("E", "Princess Gwaelin - Special");
-			tileTypes.Add("F", "Black Wall - Special");
+			Dictionary<string, string> tileTypes = new Dictionary<string, string> {
+				{ "0", "Solid Stone" },
+				{ "1", "Stairs Up" },
+				{ "2", "Red Brick Floor" },
+				{ "3", "Stairs Down" },
+				{ "4", "Treasure Chest" },
+				{ "5", "Locked Door" },
+				{ "6", "Princess Gwaelin" },
+				{ "7", "Black Wall" },
+				{ "8", "Solid Stone - Special" },
+				{ "9", "Stairs Up - Special" },
+				{ "A", "Red Brick Floor - Special" },
+				{ "B", "Stairs Down - Special" },
+				{ "C", "Treasure Chest - Special" },
+				{ "D", "Locked Door - Special" },
+				{ "E", "Princess Gwaelin - Special" },
+				{ "F", "Black Wall - Special" }
+			};
 
 			comboBoxTileTypes.DataSource = new BindingSource(tileTypes, null);
 			comboBoxTileTypes.DisplayMember = "Value";

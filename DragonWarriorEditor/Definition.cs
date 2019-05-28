@@ -39,13 +39,18 @@ namespace DragonWarriorEditor {
 		}
 
 		public enum Size {
-			w10h10 = 1,
-			w14h14 = 2,
-			w20h20 = 3,
-			w24h24 = 4,
-			w30h30 = 5,
-			w6h30 = 6,
-			w14h12 = 7
+			w10h10 = 0,
+			w14h14 = 1,
+			w20h20 = 2,
+			w24h24 = 3,
+			w30h30 = 4,
+			w6h30 = 5,
+			w14h12 = 6
+		}
+
+		public enum TileSet {
+			Town = 0,
+			Dungeon = 1
 		}
 
 		public static ReadOnlyDictionary<Size, Dimension> Sizes = new ReadOnlyDictionary<Size, Dimension>(
@@ -62,34 +67,34 @@ namespace DragonWarriorEditor {
 
 		public static ReadOnlyDictionary<Map, MapInfo> Maps = new ReadOnlyDictionary<Map, MapInfo>(
 			new Dictionary<Map, MapInfo>() {
-				{ Map.TantegelCastleThroneRoom, new MapInfo(Size.w10h10, 0x412) },
-				{ Map.TantegelCastleBasementSunlightShrine, new MapInfo(Size.w10h10, 0xD34) },
-				{ Map.TantegelCastle, new MapInfo(Size.w30h30, 0x250) },
-				{ Map.Rimuldar, new MapInfo(Size.w30h30, 0xB72) },
-				{ Map.Cantlin, new MapInfo(Size.w30h30, 0x8E8) },
-				{ Map.Brecconary, new MapInfo(Size.w30h30, 0x726) },
-				{ Map.Kol, new MapInfo(Size.w24h24, 0x606) },
-				{ Map.SwampCave, new MapInfo(Size.w6h30, 0xF8C) },
-				{ Map.RainShrine, new MapInfo(Size.w10h10, 0xD66) },
-				{ Map.RainbowShrine, new MapInfo(Size.w10h10, 0xD98) },
-				{ Map.ErdricksCaveB1, new MapInfo(Size.w10h10, 0x12C0) },
-				{ Map.ErdricksCaveB2, new MapInfo(Size.w10h10, 0x12F2) },
-				{ Map.GarinhamsGraveB1, new MapInfo(Size.w20h20, 0x10AA) },
-				{ Map.GarinhamsGraveB2, new MapInfo(Size.w14h12, 0x126C) },
-				{ Map.GarinhamsGraveB3, new MapInfo(Size.w20h20, 0x1172) },
-				{ Map.GarinhamsGraveB4, new MapInfo(Size.w10h10, 0x123A) },
-				{ Map.Garinham, new MapInfo(Size.w20h20, 0xAAA) },
-				{ Map.CharlockCastleB1, new MapInfo(Size.w20h20, 0xDCA) },
-				{ Map.CharlockCastleB2, new MapInfo(Size.w10h10, 0xE92) },
-				{ Map.CharlockCastleB3, new MapInfo(Size.w10h10, 0xEC4) },
-				{ Map.CharlockCastleB4, new MapInfo(Size.w10h10, 0xEF6) },
-				{ Map.CharlockCastleB5, new MapInfo(Size.w10h10, 0xF28) },
-				{ Map.CharlockCastleB6, new MapInfo(Size.w10h10, 0xF5A) },
-				{ Map.CharlockCastleB7, new MapInfo(Size.w30h30, 0x444) },
-				{ Map.CharlockCastleF1, new MapInfo(Size.w20h20, 0xC0) },
-				{ Map.Hauksness, new MapInfo(Size.w20h20, 0x188) },
-				{ Map.RockMountainB1, new MapInfo(Size.w14h14, 0xFE6) },
-				{ Map.RockMountainB2, new MapInfo(Size.w14h12, 0x1048) }  // TODO: This is 14x14 in DWTAD
+				{ Map.TantegelCastleThroneRoom, new MapInfo(Size.w10h10, 0x412, TileSet.Town) },
+				{ Map.TantegelCastleBasementSunlightShrine, new MapInfo(Size.w10h10, 0xD34, TileSet.Town) },
+				{ Map.TantegelCastle, new MapInfo(Size.w30h30, 0x250, TileSet.Town) },
+				{ Map.Rimuldar, new MapInfo(Size.w30h30, 0xB72, TileSet.Town) },
+				{ Map.Cantlin, new MapInfo(Size.w30h30, 0x8E8, TileSet.Town) },
+				{ Map.Brecconary, new MapInfo(Size.w30h30, 0x726, TileSet.Town) },
+				{ Map.Kol, new MapInfo(Size.w24h24, 0x606, TileSet.Town) },
+				{ Map.SwampCave, new MapInfo(Size.w6h30, 0xF8C, TileSet.Dungeon) },
+				{ Map.RainShrine, new MapInfo(Size.w10h10, 0xD66, TileSet.Town) },
+				{ Map.RainbowShrine, new MapInfo(Size.w10h10, 0xD98, TileSet.Town) },
+				{ Map.ErdricksCaveB1, new MapInfo(Size.w10h10, 0x12C0, TileSet.Dungeon) },
+				{ Map.ErdricksCaveB2, new MapInfo(Size.w10h10, 0x12F2, TileSet.Dungeon) },
+				{ Map.GarinhamsGraveB1, new MapInfo(Size.w20h20, 0x10AA, TileSet.Dungeon) },
+				{ Map.GarinhamsGraveB2, new MapInfo(Size.w14h12, 0x126C, TileSet.Dungeon) },
+				{ Map.GarinhamsGraveB3, new MapInfo(Size.w20h20, 0x1172, TileSet.Dungeon) },
+				{ Map.GarinhamsGraveB4, new MapInfo(Size.w10h10, 0x123A, TileSet.Dungeon) },
+				{ Map.Garinham, new MapInfo(Size.w20h20, 0xAAA, TileSet.Town) },
+				{ Map.CharlockCastleB1, new MapInfo(Size.w20h20, 0xDCA, TileSet.Dungeon) },
+				{ Map.CharlockCastleB2, new MapInfo(Size.w10h10, 0xE92, TileSet.Dungeon) },
+				{ Map.CharlockCastleB3, new MapInfo(Size.w10h10, 0xEC4, TileSet.Dungeon) },
+				{ Map.CharlockCastleB4, new MapInfo(Size.w10h10, 0xEF6, TileSet.Dungeon) },
+				{ Map.CharlockCastleB5, new MapInfo(Size.w10h10, 0xF28, TileSet.Dungeon) },
+				{ Map.CharlockCastleB6, new MapInfo(Size.w10h10, 0xF5A, TileSet.Dungeon) },
+				{ Map.CharlockCastleB7, new MapInfo(Size.w30h30, 0x444, TileSet.Town) },
+				{ Map.CharlockCastleF1, new MapInfo(Size.w20h20, 0xC0, TileSet.Town) },
+				{ Map.Hauksness, new MapInfo(Size.w20h20, 0x188, TileSet.Town) },
+				{ Map.RockMountainB1, new MapInfo(Size.w14h14, 0xFE6, TileSet.Dungeon) },
+				{ Map.RockMountainB2, new MapInfo(Size.w14h12, 0x1048, TileSet.Dungeon) }  // TODO: This is 14x14 in DWTAD
 			}
 		);
 
@@ -115,15 +120,17 @@ namespace DragonWarriorEditor {
 			// TODO: Maybe protect the constructor so only can be made here
 			public Map Map {
 				get {
-					return Definition.Maps.First(x => x.Value == this).Key;
+					return Maps.First(x => x.Value == this).Key;
 				}
 			}
 
 			public Size Size { get; private set; }
 
+			public TileSet TileSet { get; private set; }
+
 			public Dimension Dimension {
 				get {
-					return Definition.Sizes[this.Size];
+					return Sizes[this.Size];
 				}
 			}
 			public int DataLength {
@@ -134,9 +141,10 @@ namespace DragonWarriorEditor {
 
 			public long Address { get; private set; }
 
-			public MapInfo(Size size, long address) {
+			public MapInfo(Size size, long address, TileSet tileSet) {
 				this.Size = size;
 				this.Address = address;
+				this.TileSet = tileSet;
 			}
 		}
 	}
