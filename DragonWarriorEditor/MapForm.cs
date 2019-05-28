@@ -239,8 +239,6 @@ namespace DragonWarriorEditor {
 
 		private void buttonWriteROM_Click(object sender, EventArgs e) {
 			SaveMap();
-			byte a = 0xA;
-			Console.WriteLine(a.ToString());
 		}
 	}
 }

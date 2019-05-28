@@ -18,7 +18,7 @@ namespace DragonWarriorEditor {
 			SwampCave = 7,
 			RainShrine = 8,
 			RainbowShrine = 9,
-			ErdricksCaveB1 = 100,
+			ErdricksCaveB1 = 10,
 			ErdricksCaveB2 = 11,
 			GarinhamsGraveB1 = 12,
 			GarinhamsGraveB2 = 13,
@@ -95,6 +95,39 @@ namespace DragonWarriorEditor {
 				{ Map.Hauksness, new MapInfo(Size.w20h20, 0x188, TileSet.Town) },
 				{ Map.RockMountainB1, new MapInfo(Size.w14h14, 0xFE6, TileSet.Dungeon) },
 				{ Map.RockMountainB2, new MapInfo(Size.w14h12, 0x1048, TileSet.Dungeon) }  // TODO: This is 14x14 in DWTAD
+			}
+		);
+
+		public static ReadOnlyDictionary<Map, string> MapNames = new ReadOnlyDictionary<Map, string>(
+			new Dictionary<Map, string>() {
+				{ Map.Brecconary, "Brecconary" },
+				{ Map.Cantlin, "Cantlin" },
+				{ Map.CharlockCastleB1, "Charlock Castle - B1" },
+				{ Map.CharlockCastleB2, "Charlock Castle - B2" },
+				{ Map.CharlockCastleB3, "Charlock Castle - B3" },
+				{ Map.CharlockCastleB4, "Charlock Castle - B4" },
+				{ Map.CharlockCastleB5, "Charlock Castle - B5" },
+				{ Map.CharlockCastleB6, "Charlock Castle - B6" },
+				{ Map.CharlockCastleB7, "Charlock Castle - B7" },
+				{ Map.CharlockCastleF1, "Charlock Castle - F1" },
+				{ Map.ErdricksCaveB1, "Erdrick's Cave - B1" },
+				{ Map.ErdricksCaveB2, "Erdrick's Cave - B2" },
+				{ Map.Garinham, "Garinham" },
+				{ Map.GarinhamsGraveB1, "Garinham Grave - B1" },
+				{ Map.GarinhamsGraveB2, "Garinham Grave - B2" },
+				{ Map.GarinhamsGraveB3, "Garinham Grave - B3" },
+				{ Map.GarinhamsGraveB4, "Garinham Grave - B4" },
+				{ Map.Hauksness, "Hauksness Ruins" },
+				{ Map.Kol, "Kol" },
+				{ Map.RainShrine, "Rain Shrine" },
+				{ Map.RainbowShrine, "Rainbow Shrine" },
+				{ Map.Rimuldar, "Rimuldar" },
+				{ Map.RockMountainB1, "Rock Mountain Cave - B1" },
+				{ Map.RockMountainB2, "Rock Mountain Cave - B2" },
+				{ Map.SwampCave, "Swamp Cave" },
+				{ Map.TantegelCastle, "Tantegel Castle" },
+				{ Map.TantegelCastleBasementSunlightShrine, "Tantegel Castle - Basement - Sunlight Shrine" },
+				{ Map.TantegelCastleThroneRoom, "Tantegel Castle - Throne Room" }
 			}
 		);
 
